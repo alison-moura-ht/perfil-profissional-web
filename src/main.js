@@ -1,5 +1,6 @@
-import { createApp } from 'vue'
-import App from './App.vue'
-import router from './plugins/vue-router'
+import { createApp } from "vue";
+import App from "./App.vue";
+import router from "./plugins/vue-router";
+import pinia from "./plugins/pinia";
 
-createApp(App).use(router).mount('#app')
+createApp(App).use(router).use(pinia).mount("#app");
