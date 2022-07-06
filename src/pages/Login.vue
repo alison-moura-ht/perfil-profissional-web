@@ -11,6 +11,7 @@
 <script>
 import { mapActions } from "pinia";
 import { useUsuarioStore } from "../stores/usuarioStore";
+import { useAlertaStore } from "../stores/alertaStore";
 
 export default {
   data: () => ({
@@ -18,9 +19,14 @@ export default {
   }),
   methods: {
     ...mapActions(useUsuarioStore, ["login"]),
+    ...mapActions(useAlertaStore, ["exibirErro"]),
     async logar() {
-      await this.login()
-      this.$router.push("/home")
+      try {
+        await this.login();
+        this.$router.push("/home");
+      } catch (error) {
+        this.exibirErro(error.body.message);
+      }
     },
   },
 };

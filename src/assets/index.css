@@ -27,6 +27,7 @@ button {
     border: none;
     color: white;
     text-transform: uppercase;
+    cursor: pointer;
 }
 
 .form-login {
@@ -57,4 +58,35 @@ button {
     font-size: 50px;
     font-weight: bold;
     text-transform: uppercase;
+}
+
+/* ALERTA */
+
+.alerta-app {
+    background-color: #e0e0e0;
+    padding: 5px 20px;
+    border-radius: 5px;
+    width: 80%;
+    position: absolute;
+    z-index: 10;
+    left: 10%;
+    top: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.alerta-app button {
+    background: transparent;
+}
+
+.alerta-app.erro {
+    background-color: rgb(255, 70, 70);
+    color: white;
+}
+
+.alerta-app.info {
+    background-color: rgb(49, 111, 255);
+    color: white;
 }
