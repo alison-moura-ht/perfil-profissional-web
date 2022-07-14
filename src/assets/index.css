@@ -12,11 +12,17 @@ body {
     margin-right: 60px;
 }
 
-input {
+input,
+select {
     height: 40px;
     border: solid 1px #2c3e50;
     border-radius: 5px;
     padding: 0px 10px;
+}
+
+input[type=checkbox] {
+    width: 20px;
+    height: 20px;
 }
 
 button {
@@ -32,7 +38,7 @@ button {
 
 .form-login {
     background-color: white;
-    width: 300px;
+    width: 400px;
     margin: auto;
     padding: 40px 60px;
     border-radius: 5px;
@@ -41,9 +47,10 @@ button {
     flex-wrap: wrap;
 }
 
-.form-login input {
+.form-login input:not([type=checkbox]),
+.form-login select {
     width: 100%;
-    margin-bottom: 30px;
+    margin-bottom: 20px;
 }
 
 .form-login button {
@@ -58,6 +65,104 @@ button {
     font-size: 50px;
     font-weight: bold;
     text-transform: uppercase;
+}
+
+/* MARGIN */
+
+.mt-0 {
+    margin-top: 0px;
+}
+
+.mt-1 {
+    margin-top: 4px;
+}
+
+.mt-2 {
+    margin-top: 8px;
+}
+
+.mt-3 {
+    margin-top: 12px;
+}
+
+.mt-4 {
+    margin-top: 16px;
+}
+
+.mt-5 {
+    margin-top: 20px;
+}
+
+.mb-0 {
+    margin-bottom: 0px;
+}
+
+.mb-1 {
+    margin-bottom: 4px;
+}
+
+.mb-2 {
+    margin-bottom: 8px;
+}
+
+.mb-3 {
+    margin-bottom: 12px;
+}
+
+.mb-4 {
+    margin-bottom: 16px;
+}
+
+.mb-5 {
+    margin-bottom: 20px;
+}
+
+.mr-0 {
+    margin-right: 0px;
+}
+
+.mr-1 {
+    margin-right: 4px;
+}
+
+.mr-2 {
+    margin-right: 8px;
+}
+
+.mr-3 {
+    margin-right: 12px;
+}
+
+.mr-4 {
+    margin-right: 16px;
+}
+
+.mr-5 {
+    margin-right: 20px;
+}
+
+.ml-0 {
+    margin-left: 0px;
+}
+
+.ml-1 {
+    margin-left: 4px;
+}
+
+.ml-2 {
+    margin-left: 8px;
+}
+
+.ml-3 {
+    margin-left: 12px;
+}
+
+.ml-4 {
+    margin-left: 16px;
+}
+
+.ml-5 {
+    margin-left: 20px;
 }
 
 /* ALERTA */
@@ -89,4 +194,26 @@ button {
 .alerta-app.info {
     background-color: rgb(49, 111, 255);
     color: white;
+}
+
+.alerta-app.sucesso {
+    background-color: rgb(28, 255, 141);
+    color: #292929;
+}
+
+/* FLEX */
+
+.flex {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.items-center {
+    align-items: center;
+}
+
+/* WIDTH */
+
+.full-width {
+    width: 100%;
 }

@@ -7,6 +7,7 @@ export const useAlertaStore = defineStore("alerta", {
     erro: false,
     info: false,
     aviso: false,
+    sucesso: false,
   }),
   actions: {
     abrir(mensagem) {
@@ -19,14 +20,19 @@ export const useAlertaStore = defineStore("alerta", {
       this.erro = false;
       this.info = false;
       this.aviso = false;
+      this.sucesso = false;
     },
     exibirErro(mensagem) {
-        this.erro = true
-        this.abrir(mensagem)
+      this.erro = true;
+      this.abrir(mensagem);
     },
     exibirInfo(mensagem) {
-        this.info = true
-        this.abrir(mensagem)
-    }
+      this.info = true;
+      this.abrir(mensagem);
+    },
+    exibirSucesso(mensagem) {
+      this.sucesso = true;
+      this.abrir(mensagem);
+    },
   },
 });

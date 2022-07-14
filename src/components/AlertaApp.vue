@@ -1,7 +1,7 @@
 <template>
   <div
     class="alerta-app"
-    :class="[{ erro: erro }, { info: info }]"
+    :class="[{ erro: erro }, { info: info }, { sucesso: sucesso }]"
     v-show="exibir"
   >
     <p>{{ mensagem }}</p>
@@ -14,7 +14,13 @@ import { useAlertaStore } from "../stores/alertaStore";
 
 export default {
   computed: {
-    ...mapState(useAlertaStore, ["exibir", "mensagem", "erro", "info"]),
+    ...mapState(useAlertaStore, [
+      "exibir",
+      "mensagem",
+      "erro",
+      "info",
+      "sucesso",
+    ]),
   },
   methods: {
     ...mapActions(useAlertaStore, ["fechar"]),

@@ -5,12 +5,13 @@
     <input v-model="usuario.email" type="email" placeholder="E-mail" />
     <input v-model="usuario.senha" type="password" placeholder="Senha" />
     <button @click="logar" type="button">Entrar</button>
+    <button @click="novaConta" class="mt-5">Crirar minha conta</button>
   </form>
 </template>
 
 <script>
 import { mapActions } from "pinia";
-import { useUsuarioStore } from "../stores/usuarioStore";
+import { usePerfilStore } from "../stores/perfilStore";
 import { useAlertaStore } from "../stores/alertaStore";
 
 export default {
@@ -18,15 +19,18 @@ export default {
     usuario: {},
   }),
   methods: {
-    ...mapActions(useUsuarioStore, ["login"]),
+    ...mapActions(usePerfilStore, ["login"]),
     ...mapActions(useAlertaStore, ["exibirErro"]),
     async logar() {
       try {
-        await this.login();
+        await this.login(this.usuario);
         this.$router.push("/home");
       } catch (error) {
         this.exibirErro(error.body.message);
       }
+    },
+    novaConta() {
+      this.$router.push("/nova-conta")
     },
   },
 };
