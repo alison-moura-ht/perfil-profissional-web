@@ -4,12 +4,12 @@
 
   <section>
     <h3>Últimos perfis cadastrados</h3>
-    <lista-perfis-app></lista-perfis-app>
+    <tabela-perfis-app></tabela-perfis-app>
   </section>
 
   <section>
     <h3>Últimas notificações</h3>
-    <lista-notificacoes-app></lista-notificacoes-app>
+    <tabela-notificacoes-app></tabela-notificacoes-app>
   </section>
 </template>
 
@@ -17,13 +17,13 @@
 import { mapState, mapActions } from "pinia";
 import { useNotificacaoStore } from "../stores/notificacaoStore";
 import { usePerfilStore } from "../stores/perfilStore";
-import ListaPerfisApp from "../components/ListaPerfisApp.vue";
-import ListaNotificacoesApp from "../components/ListaNotificacoesApp.vue";
+import TabelaPerfisApp from "../components/TabelaPerfisApp.vue";
+import TabelaNotificacoesApp from "../components/TabelaNotificacoesApp.vue";
 
 export default {
   components: {
-    ListaPerfisApp,
-    ListaNotificacoesApp,
+    TabelaPerfisApp,
+    TabelaNotificacoesApp,
   },
   computed: {
     ...mapState(usePerfilStore, ["usuarioLogado"]),
