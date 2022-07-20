@@ -1,8 +1,9 @@
 import { mande } from "mande"
 import { usePerfilStore } from "../stores/perfilStore"
+const API_HOST = import.meta.env.VITE_APP_API_HOST
 
-const notificacao = mande("http://localhost:3000/notificacao", {})
-const notificacaoPerfil = mande("http://localhost:3000/notificacao/perfil", {})
+const notificacao = mande(`${API_HOST}/notificacao`, {})
+const notificacaoPerfil = mande(`${API_HOST}/notificacao/perfil`, {})
 
 function setToken() {
     const store = usePerfilStore()

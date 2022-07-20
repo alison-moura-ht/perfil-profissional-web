@@ -1,7 +1,8 @@
 import { mande } from "mande";
 import { usePerfilStore } from "../stores/perfilStore";
+const API_HOST = import.meta.env.VITE_APP_API_HOST
 
-const perfil = mande("http://localhost:3000/perfil", {});
+const perfil = mande(`${API_HOST}/perfil`, {});
 
 function setToken() {
   const store = usePerfilStore();
