@@ -2,7 +2,7 @@
   <button v-show="!formEducacao" @click="formEducacao = true" type="button">
     Novo
   </button>
-  <div v-show="formEducacao">
+  <div class="form" v-show="formEducacao">
     <label for="instituicao">Instituição de ensino</label>
     <input
       v-model="educacao.instituicao"
@@ -61,3 +61,20 @@ export default {
   },
 };
 </script>
+<style scoped>
+button {
+  margin-bottom: 10px;
+  margin-right: 10px;
+}
+.form {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+.form input,
+.form select {
+  width: 100%;
+  margin-bottom: 10px;
+  margin-top: 5px;
+}
+</style>

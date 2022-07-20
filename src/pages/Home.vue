@@ -1,16 +1,18 @@
 <template>
-  <h1>Home</h1>
-  <h2>Olá! {{ usuarioLogado.nome }}</h2>
+  <div class="container">
+    <h1>Home</h1>
+    <h2>Olá! {{ usuarioLogado.nome }}</h2>
 
-  <section>
-    <h3>Últimos perfis cadastrados</h3>
-    <tabela-perfis-app></tabela-perfis-app>
-  </section>
+    <section>
+      <h3>Últimos perfis cadastrados</h3>
+      <tabela-perfis-app></tabela-perfis-app>
+    </section>
 
-  <section>
-    <h3>Últimas notificações</h3>
-    <tabela-notificacoes-app></tabela-notificacoes-app>
-  </section>
+    <section>
+      <h3>Últimas notificações</h3>
+      <tabela-notificacoes-app></tabela-notificacoes-app>
+    </section>
+  </div>
 </template>
 
 <script>
@@ -39,3 +41,19 @@ export default {
   },
 };
 </script>
+<style scoped>
+h1 {
+  margin-top: 50px;
+  margin-bottom: 20px;
+}
+h2 {
+  margin-bottom: 20px;
+}
+h3 {
+  margin-bottom: 20px;
+}
+
+section {
+  margin-bottom: 20px;
+}
+</style>

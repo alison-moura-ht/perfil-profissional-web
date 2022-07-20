@@ -1,7 +1,7 @@
 <template>
   <h1 class="text-center titulo">Nova Conta</h1>
 
-  <form class="form-login">
+  <form class="form">
     <label for="nome">Nome</label>
     <input
       id="nome"
@@ -69,16 +69,38 @@ export default {
     cadastrarPerfil() {
       try {
         this.cadastrar(this.perfil);
-        this.exibirSucesso("Perfil cadastrado com sucesso!")
+        this.exibirSucesso("Perfil cadastrado com sucesso!");
         this.$router.push({ name: "Login" });
       } catch (error) {
-        console.log(error)
-        this.exibirErro(error.body.message)
+        console.log(error);
+        this.exibirErro(error.body.message);
       }
     },
     voltar() {
-      this.$router.push({ name: "Login" })
+      this.$router.push({ name: "Login" });
     },
   },
 };
 </script>
+<style scoped>
+.form {
+  background-color: white;
+  width: 600px;
+  margin: auto;
+  padding: 40px 60px;
+  border-radius: var(--border-radius);
+  box-shadow: 1px 1px 8px -2px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.form input:not([type="checkbox"]),
+.form select {
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.form button {
+  width: 100%;
+}
+</style>

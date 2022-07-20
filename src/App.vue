@@ -1,13 +1,16 @@
-<script setup>
-</script>
+<script setup></script>
 
 <template>
   <alerta-app></alerta-app>
-  <nav>
-    <router-link to="/home">Home</router-link> | 
-    <router-link to="/perfil">Perfil</router-link> | 
-    <router-link to="/notificacoes">Notificações</router-link> | 
-    <router-link to="/">Sair</router-link>
-  </nav>
+  <loading-app></loading-app>
+  <navbar-app></navbar-app>
   <router-view></router-view>
 </template>
+<script>
+import NavbarApp from "./components/NavbarApp.vue";
+import LoadingApp from "./components/LoadingApp.vue";
+
+export default {
+  components: { NavbarApp, LoadingApp },
+};
+</script>

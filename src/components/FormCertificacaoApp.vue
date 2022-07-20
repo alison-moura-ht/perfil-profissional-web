@@ -1,8 +1,12 @@
 <template>
-  <button v-show="!formCertificacao" @click="formCertificacao = true" type="button">
+  <button
+    v-show="!formCertificacao"
+    @click="formCertificacao = true"
+    type="button"
+  >
     Novo
   </button>
-  <div v-show="formCertificacao">
+  <div class="form" v-show="formCertificacao">
     <label for="instituicao">Instituição de ensino</label>
     <input
       v-model="certificacao.instituicao"
@@ -51,3 +55,21 @@ export default {
   },
 };
 </script>
+
+<style scoped>
+button {
+  margin-bottom: 10px;
+  margin-right: 10px;
+}
+.form {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+.form input,
+.form select {
+  width: 100%;
+  margin-bottom: 10px;
+  margin-top: 5px;
+}
+</style>

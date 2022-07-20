@@ -1,5 +1,5 @@
 <template>
-  <table border="1">
+  <table>
     <thead>
       <th>Instituição</th>
       <th>Nível</th>
@@ -10,13 +10,15 @@
       <tr v-for="item in educacao" :key="item.ingresso">
         <td>{{ item.instituicao }}</td>
         <td>{{ item.nivelEscolaridade }}</td>
-        <td>{{ item.ingresso }}</td>
-        <td>{{ item.conclusao }}</td>
+        <td>{{ formatarData(item.ingresso) }}</td>
+        <td>{{ formatarData(item.conclusao) }}</td>
       </tr>
     </tbody>
   </table>
 </template>
 <script>
+import { formatarData } from '../utils/formatador';
+
 export default {
   props: {
     educacao: {
@@ -24,5 +26,10 @@ export default {
       require: true,
     },
   },
+  methods: {
+    formatarData(data) { 
+      return formatarData(data)
+    }
+  }
 };
 </script>

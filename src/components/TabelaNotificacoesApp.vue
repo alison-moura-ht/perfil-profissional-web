@@ -1,5 +1,5 @@
 <template>
-  <table border="1">
+  <table>
     <thead>
       <th>Tipo</th>
       <th>Título</th>

@@ -5,7 +5,7 @@ import {
   listarUltimosPerfis,
   buscarPerfil,
   atualizarPerfil,
-conectarPerfil,
+  conectarPerfil,
 } from "../api/perfil";
 
 export const usePerfilStore = defineStore("perfil", {
@@ -16,6 +16,20 @@ export const usePerfilStore = defineStore("perfil", {
   actions: {
     async login(usuario) {
       this.usuarioLogado = await login(usuario);
+      sessionStorage.setItem(
+        "usuarioLogado",
+        JSON.stringify(this.usuarioLogado)
+      );
+    },
+    recuperarLogin() {
+      const usuarioSession = sessionStorage.getItem("usuarioLogado")
+      if(usuarioSession) {
+        this.usuarioLogado = JSON.parse(usuarioSession)
+      }
+    },
+    logout() {
+      this.usuarioLogado = {}
+      sessionStorage.removeItem("usuarioLogado")
     },
     async cadastrar(perfil) {
       await cadastrar(perfil);
@@ -26,14 +40,14 @@ export const usePerfilStore = defineStore("perfil", {
     async buscarPerfilLogado() {
       return await buscarPerfil(this.usuarioLogado.perfil);
     },
-    async buscarPerfil(perfilId){
-      return await buscarPerfil(perfilId)
+    async buscarPerfil(perfilId) {
+      return await buscarPerfil(perfilId);
     },
     async atualizarPerfil(perfil) {
       return await atualizarPerfil(perfil);
     },
     async conectarPerfil(perfilDestino) {
-      return await conectarPerfil(this.usuarioLogado.perfil, perfilDestino)
-    }
+      return await conectarPerfil(this.usuarioLogado.perfil, perfilDestino);
+    },
   },
 });
