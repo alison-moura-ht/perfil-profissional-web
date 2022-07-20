@@ -44,7 +44,7 @@ export default [
     meta: { autenticacao: true, navbar: true },
   },
   {
-    path: "/visualizar-perfil/:id",
+    path: "/visualizar-perfil",
     component: VisualizarPerfil,
     name: "VisualizarPerfil",
     meta: { autenticacao: false, navbar: false },
