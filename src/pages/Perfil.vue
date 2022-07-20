@@ -4,7 +4,7 @@
 
     <div class="flex space-between">
       <h2>Informações pessoais</h2>
-      <a target="_blank" :href="`/visualizar-perfil?id=${perfil._id}`">Compartilhar meu perfil</a>
+      <a target="_blank" :href="`/visualizar-perfil/${perfil._id}`">Compartilhar meu perfil</a>
     </div>
     <section>
       <form>

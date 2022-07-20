@@ -51,7 +51,7 @@ export default {
     ...mapActions(useAlertaStore, ["exibirErro"]),
     async carregarPerfil() {
       try {
-        this.perfil = await buscarPerfil(this.$route.query.id);
+        this.perfil = await buscarPerfil(this.$route.params.id);
       } catch (error) {
         this.exibirErro(error.message);
       }
