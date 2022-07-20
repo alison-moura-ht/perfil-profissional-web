@@ -1,0 +1,6 @@
+[[redirects]]
+  from = "/visualizar-perfil/*"
+  to = "/visualizar-perfil"
+  status = 301
+  force = false
+  query = {id = ":id"}
