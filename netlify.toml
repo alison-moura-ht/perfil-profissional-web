@@ -1,6 +1,6 @@
 [[redirects]]
   from = "/visualizar-perfil/*"
-  to = "/visualizar-perfil"
+  to = "https://perfil-profissional-ht.netlify.app/visualizar-perfil"
   status = 301
   force = false
   query = {id = ":id"}
