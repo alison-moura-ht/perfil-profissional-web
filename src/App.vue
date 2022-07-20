@@ -3,7 +3,7 @@
 <template>
   <alerta-app></alerta-app>
   <loading-app></loading-app>
-  <navbar-app></navbar-app>
+  <navbar-app v-show="$route.meta.navbar"></navbar-app>
   <router-view></router-view>
 </template>
 <script>

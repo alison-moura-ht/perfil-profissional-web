@@ -2,7 +2,10 @@
   <div class="container">
     <h1>Meu Perfil</h1>
 
-    <h2>Informações pessoais</h2>
+    <div class="flex space-between">
+      <h2>Informações pessoais</h2>
+      <a target="_blank" :href="`/visualizar-perfil/${perfil._id}`">Compartilhar meu perfil</a>
+    </div>
     <section>
       <form>
         <div>
@@ -86,19 +89,19 @@ export default {
     ...mapActions(useLoadingStore, ["exibirLoading", "fecharLoading"]),
     async atualizar() {
       try {
-        this.exibirLoading()
+        this.exibirLoading();
         await this.atualizarPerfil(this.perfil);
         this.exibirSucesso("Alterações salvas com sucesso!");
       } catch (error) {
-        this.exibirErro(error.message)
+        this.exibirErro(error.message);
       } finally {
-        this.fecharLoading()
+        this.fecharLoading();
       }
     },
   },
   async mounted() {
     this.perfil = await this.buscarPerfilLogado();
-    this.perfil.dataNascimento = formatarDataHTML(this.perfil.dataNascimento)
+    this.perfil.dataNascimento = formatarDataHTML(this.perfil.dataNascimento);
   },
 };
 </script>
@@ -143,5 +146,10 @@ fieldset {
   width: 100%;
   padding: 10px 15px;
   border-radius: var(--border-radius);
+}
+
+a {
+  color: var(--cor-primaria);
+  cursor: pointer;
 }
 </style>
